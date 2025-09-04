@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="841.89px" height="595.279px" viewBox="0 0 841.89 595.279" enable-background="new 0 0 841.89 595.279"
+	 xml:space="preserve">
+<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M342.689,314.649
+	c0-78.277-63.457-141.734-141.733-141.734S59.223,236.372,59.223,314.649c0,53.374,29.509,99.849,73.097,124.022
+	c-1.457,5.66-2.231,11.594-2.231,17.709c0,39.138,31.728,70.865,70.866,70.865s70.867-31.728,70.867-70.865
+	c0-6.115-0.774-12.049-2.231-17.71C313.18,414.497,342.689,368.022,342.689,314.649z"/>
+<path fill="#76CCEF" stroke="#3E3D40" stroke-miterlimit="10" d="M713.007,164.316c-27.674-27.675-72.544-27.676-100.219-0.001
+	c-4.324,4.324-7.973,9.067-10.945,14.1c-47.915-13.728-101.644-1.73-139.384,36.01c-55.351,55.351-55.351,145.092-0.001,200.44
+	c55.35,55.352,145.09,55.35,200.441,0c37.74-37.741,49.737-91.469,36.01-139.384c5.032-2.973,9.775-6.621,14.1-10.945
+	C740.684,236.861,740.683,191.991,713.007,164.316z"/>
+<g>
+	<circle fill="#3E3D40" cx="-145.885" cy="385.512" r="35.426"/>
+	<circle fill="#3E3D40" cx="-124.684" cy="290.571" r="14.23"/>
+	
+		<rect x="-183.835" y="332.689" transform="matrix(-0.2161 0.9764 -0.9764 -0.2161 165.6615 543.1187)" fill="#3E3D40" width="97.28" height="10.744"/>
+</g>
+<circle fill="none" stroke="#3E3D40" stroke-miterlimit="10" cx="-145.885" cy="324.656" r="70.866"/>
+<circle fill="none" stroke="#3E3D40" stroke-width="2" stroke-miterlimit="10" cx="-171.878" cy="-56.249" r="141.733"/>
+<circle fill="none" stroke="#3E3D40" stroke-miterlimit="10" cx="-171.878" cy="85.483" r="70.866"/>
+<path fill="none" stroke="#3E3D40" stroke-miterlimit="10" d="M713.009,264.536c-27.676,27.675-72.547,27.675-100.222,0"/>
+<path fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" d="M200.954,527.245
+	c-39.139,0.001-70.867-31.727-70.867-70.864c0-39.139,31.729-70.867,70.867-70.867"/>
+</svg>

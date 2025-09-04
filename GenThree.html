@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html>
+	<title>GenThree</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Безплатно приложение за определяне на роднински отношения">
+	<meta name="keywords" content="HTML, CSS">
+	<meta name="author" content="Alexander Grantcharov | Recode.bg">
+
+
+<head>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="flaticon.css">
+	
+	
+	<script>	
+		function changeGenger() {
+			var element = document.getElementsByClassName("circle_big male");
+			element.classList.toggle("circle_big female");
+		}
+	</script>
+	
+	<style>
+	
+	@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+	
+	@font-face {
+    font-family: "flaticon";
+    src: url("Flaticon.woff") format('woff');
+	}
+	
+	body {
+		font-family: 'Exo 2', sans-serif;
+	}
+
+	#canvas {
+		width: 1800px;
+		height: 1200px;
+		background-color: rgb(80,80,80);
+	}
+	
+	.person {
+		
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		line-height: 100px;
+		font-weight: 100;
+	}
+	
+	.circle_big {
+		background-size: contain;
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		text-align: center;
+		font-weight: 100;
+		z-index: 1;
+	}
+	
+	.male {
+		background-image: url('male.svg');
+		background-color: lightblue;
+	}
+	
+	.female {
+		background-image: url('female.svg');
+		background-color: pink;
+	}
+	
+	.circle_button {
+		background-color: rgb(200,200,200);
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		position: absolute;
+		text-align: center;
+		z-index: 2;
+		display: inline;
+		font-family: "flaticon";
+		font-size: 15px;
+	}
+	
+	.delete {
+		top: 5px;
+		left: 80px;
+	}
+	
+	.marriage {
+		top: 0px;
+		left: 32px;
+	}
+	.death {
+		top: 16px;
+		left: 10px;
+	}
+	
+	.sexswitch {
+		top: 40px;
+		left: 0px;
+	}
+		
+	
+	
+	
+	/* Persons positions */
+	
+	/* GrandParent generation positions */
+	
+	#G11 {
+		left: 100px;
+		top: 50px;
+	}
+	
+	#G12 {
+		left: 240px;
+		top: 50px;
+	}
+	
+	#G21 {
+		left: 440px;
+		top: 50px;
+	}
+	
+	#G22 {
+		left: 580px;
+		top: 50px;
+	}
+	
+	#G31 {
+		left: 780px;
+		top: 50px;
+	}
+	
+	#G32 {
+		left: 920px;
+		top: 50px;
+	}
+	
+	#G41 {
+		left: 1120px;
+		top: 50px;
+	}
+	
+	#G42 {
+		left: 1260px;
+		top: 50px;
+	}
+	
+	#G51 {
+		left: 1460px;
+		top: 50px;
+	}
+	
+	#G52 {
+		left: 1600px;
+		top: 50px;
+	}
+	
+	
+	/* Parent generation positions */
+	
+	#P11 {
+		left: 270px;
+		top: 300px;
+	}
+	
+	#P12 {
+		left: 410px;
+		top: 300px;
+	}
+	
+	#P21 {
+		left: 610px;
+		top: 300px;
+	}
+	
+	#P22 {
+		left: 750px;
+		top: 300px;
+	}
+	
+	#P31 {
+		left: 950px;
+		top: 300px;
+	}
+	
+	#P32 {
+		left: 1090px;
+		top: 300px;
+	}
+	
+	#P41 {
+		left: 1290px;
+		top: 300px;
+	}
+	
+	#P42 {
+		left: 1430px;
+		top: 300px;
+	}
+	
+	
+	/* Current (norma) generation positions */
+	
+	#N11 {
+		left: 100px;
+		top: 550px;
+	}
+	
+	#N12 {
+		left: 240px;
+		top: 550px;
+	}
+	
+	#N21 {
+		left: 440px;
+		top: 550px;
+	}
+	
+	#N22 {
+		left: 580px;
+		top: 550px;
+	}
+	
+	#N31 {
+		left: 780px;
+		top: 550px;
+	}
+	
+	#N32 {
+		left: 920px;
+		top: 550px;
+	}
+	
+	#N41 {
+		left: 1120px;
+		top: 550px;
+	}
+	
+	#N42 {
+		left: 1260px;
+		top: 550px;
+	}
+	
+	#N51 {
+		left: 1460px;
+		top: 550px;
+	}
+	
+	#N52 {
+		left: 1600px;
+		top: 550px;
+	}
+	
+	
+	/* Children generation positions */
+	
+	#C11 {
+		left: 270px;
+		top: 800px;
+	}
+	
+	#C12 {
+		left: 410px;
+		top: 800px;
+	}
+	
+	#C21 {
+		left: 610px;
+		top: 800px;
+	}
+	
+	#C22 {
+		left: 750px;
+		top: 800px;
+	}
+	
+	#C31 {
+		left: 950px;
+		top: 800px;
+	}
+	
+	#C32 {
+		left: 1090px;
+		top: 800px;
+	}
+	
+	#C41 {
+		left: 1290px;
+		top: 800px;
+	}
+	
+	#C42 {
+		left: 1430px;
+		top: 800px;
+	}
+	
+	
+	/* GrandChild generation positions */
+	
+	#GC11 {
+		left: 100px;
+		top: 1050px;
+	}
+	
+	#GC12 {
+		left: 240px;
+		top: 1050px;
+	}
+	
+	#GC21 {
+		left: 440px;
+		top: 1050px;
+	}
+	
+	#GC22 {
+		left: 580px;
+		top: 1050px;
+	}
+	
+	#GC31 {
+		left: 780px;
+		top: 1050px;
+	}
+	
+	#GC32 {
+		left: 920px;
+		top: 1050px;
+	}
+	
+	#GC41 {
+		left: 1120px;
+		top: 1050px;
+	}
+	
+	#GC42 {
+		left: 1260px;
+		top: 1050px;
+	}
+	
+	#GC51 {
+		left: 1460px;
+		top: 1050px;
+	}
+	
+	#GC52 {
+		left: 1600px;
+		top: 1050px;
+	}
+	
+	/* Tooltip text */
+	.circle_button .tooltiptext {
+		visibility: hidden;
+		font-family: "Exo 2";
+		font-weight: 300;
+		font-size: 12px;
+		width: 90px;
+		height: 20px;
+		background-color: rgb(200,200,200);
+		color: rgb(0,0,0);
+		text-align: center;
+		padding: 2px 0;
+		border-radius: 6px;
+		bottom: 100%;
+		left: 50%;
+		margin-left: -45px; /* Use half of the width (120/2 = 60), to center the tooltip */
+	 
+		/* Position the tooltip text - see examples below! */
+		position: absolute;
+		z-index: 9;
+	}
+	
+	.circle_button_ .tooltiptext::after {
+		content: " ";
+		position: absolute;
+		top: 100%; /* At the bottom of the tooltip */
+		left: 50%;
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		border-color: black transparent transparent transparent;
+	}
+	
+	/* Show the tooltip text when you mouse over the tooltip container */
+	.circle_button:hover .tooltiptext {
+		visibility: visible;
+		z-index: 10;
+	}
+	
+	.circle_button:hover {
+		background: rgb(30,30,30);
+		color: rgb(255,255,255);
+	}
+	
+	</style>
+</head>
+
+
+<body>
+	
+	<div id="canvas">
+		
+		<div id="GP_roll">
+		
+			<div id="G11" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="G12" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="G21" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="G22" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="G31" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="G32" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="G41" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="G42" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="G51" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="G52" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+		</div>
+		
+		<div id="P_roll">
+			
+			<div id="P11" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="P12" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="P21" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="P22" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="P31" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="P32" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="P41" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="P42" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+		</div>
+		
+		
+		<div id="N_roll">
+			
+			<div id="N11" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="N12" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="N21" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="N22" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="N31" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="N32" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="N41" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="N42" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="N51" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="N52" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+		</div>
+		
+		<div id="C_roll">
+			
+			<div id="C11" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="C12" class="person">
+				<div class="circle_button delete"></div>
+				<div class="circle_button marriage"></div>
+				<div class="circle_button death"></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="C21" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="C22" class="person">
+				<div class="circle_button delete"></div>
+				<div class="circle_button marriage"></div>
+				<div class="circle_button death"></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="C31" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="C32" class="person">
+				<div class="circle_button delete"></div>
+				<div class="circle_button marriage"></div>
+				<div class="circle_button death"></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="C41" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="C42" class="person">
+				<div class="circle_button delete"></div>
+				<div class="circle_button marriage"></div>
+				<div class="circle_button death"></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+		</div>
+		
+		<div id="GC_roll">
+			
+			<div id="GC11" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="GC12" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="GC21" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="GC22" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="GC31" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="GC32" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="GC41" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="GC42" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+			<div id="GC51" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big male">man</div>
+			</div>
+		
+			<div id="GC52" class="person">
+				<div class="circle_button delete"><span class="tooltiptext">Delete</span></div>
+				<div class="circle_button marriage"><span class="tooltiptext">Marriage</span></div>
+				<div class="circle_button death"><span class="tooltiptext">Death</span></div>
+				<div class="circle_button sexswitch" onclick="changeGenger();"><span class="tooltiptext">Switch Gender</span></div>
+				<div class="circle_big female">woman</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+</body>
+</html>

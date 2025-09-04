@@ -1,0 +1,498 @@
+	@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+	
+	
+	@font-face {
+    font-family: "flaticon";
+    src: url("fonts/Flaticon.woff") format('woff');
+	}
+	
+	body {
+		font-family: 'Roboto Condensed', sans-serif;
+		background-color: rgb(80,80,80);
+	}
+	
+	#main {
+		width: 100%;
+		/* Firefox */
+		display: -moz-box;
+		-moz-box-pack: center;
+		-moz-box-align: center;
+		/* Safari and Chrome */
+		display: -webkit-box;
+		-webkit-box-pack: center;
+		-webkit-box-align: center;
+		/* W3C */
+		display: box;
+		box-pack: center;
+		box-align: center;
+	}
+	
+	#canvas {
+		width: 1890px;
+		height: 1200px;
+		position: relative;
+	}
+	
+	.person {
+		width: 90px;
+		height: 90px;
+		position: absolute;
+	}
+	
+	.holder {
+		background-size: contain;
+		cursor: pointer;
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		font-weight: 100;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.holder:hover {
+		width: 74px;
+		height: 74px;
+		border: solid 3px rgb(255,255,255);
+	}
+	
+	.husband_line {
+		width: 50px;
+		height: 10px;
+		border-bottom: solid 1px rgb(255,255,255);
+		border-left: solid 1px rgb(255,255,255);
+		float: right;
+	}
+	
+	.wife_line {
+		width: 50px;
+		height: 10px;
+		border-bottom: solid 1px rgb(255,255,255);
+		border-right: solid 1px rgb(255,255,255);
+		float: left;
+	}
+	
+	.male_sibling_line {
+		width: 50px;
+		height: 10px;
+		border-top: solid 1px rgb(255,255,255);
+		border-left: solid 1px rgb(255,255,255);
+		float: right;
+	}
+	
+	.female_sibling_line {
+		width: 50px;
+		height: 10px;
+		border-top: solid 1px rgb(255,255,255);
+		border-right: solid 1px rgb(255,255,255);
+		float: left;
+	}
+	
+	.male {
+		background-image: url('../images/male.svg');
+		background-color: lightblue;
+		float: left;
+	}
+	
+	.female {
+		background-image: url('../images/female.svg');
+		background-color: pink;
+		float: right;
+	}
+	
+	.me {
+		font-weight: 900;
+		background-color: lightgreen;
+	}
+	
+	
+	/* svg Line Layers */
+	
+	#GPP {
+		position: absolute;
+		top: 190px;
+	}
+	
+	#PN {
+		position: absolute;
+		top: 430px;
+	}
+	
+	#NC {
+		position: absolute;
+		top: 670px;
+	}
+	
+	#CGC {
+		position: absolute;
+		top: 910px;
+	}
+	
+	
+	/* Persons positions */
+	
+	/* GrandParent generation positions */
+	
+	#GP11 {
+		position: absolute;
+		left: 510px;
+		top: 100px;
+	}
+	
+	#GP12 {
+		position: absolute;
+		left: 600px;
+		top: 100px;
+	}
+	
+	#GP21 {
+		position: absolute;
+		left: 740px;
+		top: 100px;
+	}
+	
+	#GP22 {
+		position: absolute;
+		left: 830px;
+		top: 100px;
+	}
+	
+	#GP31 {
+		position: absolute;
+		left: 970px;
+		top: 100px;
+	}
+	
+	#GP32 {
+		position: absolute;
+		left: 1060px;
+		top: 100px;
+	}
+	
+	#GP41 {
+		position: absolute;
+		left: 1200px;
+		top: 100px;
+	}
+	
+	#GP42 {
+		position: absolute;
+		left: 1290px;
+		top: 100px;
+	}
+	
+	
+	/* Parent generation positions */
+	
+	#P11 {
+		position: absolute;
+		left: 280px;
+		top: 340px;
+	}
+	
+	#P12 {
+		position: absolute;
+		left: 370px;
+		top: 340px;
+	}
+	
+	#P21 {
+		position: absolute;
+		left: 510px;
+		top: 340px;
+	}
+	
+	#P22 {
+		position: absolute;
+		left: 600px;
+		top: 340px;
+	}
+	
+	#P31 {
+		position: absolute;
+		left: 740px;
+		top: 340px;
+	}
+	
+	#P32 {
+		position: absolute;
+		left: 830px;
+		top: 340px;
+	}
+	
+	#P41 {
+		position: absolute;
+		left: 970px;
+		top: 340px;
+	}
+	
+	#P42 {
+		position: absolute;
+		left: 1060px;
+		top: 340px;
+	}
+	
+	#P51 {
+		position: absolute;
+		left: 1200px;
+		top: 340px;
+	}
+	
+	#P52 {
+		position: absolute;
+		left: 1290px;
+		top: 340px;
+	}
+	
+	#P61 {
+		position: absolute;
+		left: 1430px;
+		top: 340px;
+	}
+	
+	#P62 {
+		position: absolute;
+		left: 1520px;
+		top: 340px;
+	}
+	
+	/* Current (norma) generation positions */
+	
+	#N11 {
+		position: absolute;
+		left: 280px;
+		top: 580px;
+	}
+	
+	#N12 {
+		position: absolute;
+		left: 370px;
+		top: 580px;
+	}
+	
+	#N21 {
+		position: absolute;
+		left: 510px;
+		top: 580px;
+	}
+	
+	#N22 {
+		position: absolute;
+		left: 600px;
+		top: 580px;
+	}
+	
+	#N31 {
+		position: absolute;
+		left: 855px;
+		top: 580px;
+	}
+	
+	#N32 {
+		position: absolute;
+		left: 945px;
+		top: 580px;
+	}
+	
+	#N41 {
+		position: absolute;
+		left: 1200px;
+		top: 580px;
+	}
+	
+	#N42 {
+		position: absolute;
+		left: 1290px;
+		top: 580px;
+	}
+	
+	#N51 {
+		position: absolute;
+		left: 1430px;
+		top: 580px;
+	}
+	
+	#N52 {
+		position: absolute;
+		left: 1520px;
+		top: 580px;
+	}
+	
+	
+	/* Children generation positions */
+	
+	#C11 {
+		position: absolute;
+		left: 50px;
+		top: 820px;
+	}
+	
+	#C12 {
+		position: absolute;
+		left: 140px;
+		top: 820px;
+	}
+	
+	#C21 {
+		position: absolute;
+		left: 280px;
+		top: 820px;
+	}
+	
+	#C22 {
+		position: absolute;
+		left: 370px;
+		top: 820px;
+	}
+	
+	#C31 {
+		position: absolute;
+		left: 510px;
+		top: 820px;
+	}
+	
+	#C32 {
+		position: absolute;
+		left: 600px;
+		top: 820px;
+	}
+	
+	#C41 {
+		position: absolute;
+		left: 740px;
+		top: 820px;
+	}
+	
+	#C42 {
+		position: absolute;
+		left: 830px;
+		top: 820px;
+	}
+	
+	#C51 {
+		position: absolute;
+		left: 970px;
+		top: 820px;
+	}
+	
+	#C52 {
+		position: absolute;
+		left: 1060px;
+		top: 820px;
+	}
+	
+	#C61 {
+		position: absolute;
+		left: 1200px;
+		top: 820px;
+	}
+	
+	#C62 {
+		position: absolute;
+		left: 1290px;
+		top: 820px;
+	}
+	
+	#C71 {
+		position: absolute;
+		left: 1430px;
+		top: 820px;
+	}
+	
+	#C72 {
+		position: absolute;
+		left: 1520px;
+		top: 820px;
+	}
+	
+	#C81 {
+		position: absolute;
+		left: 1660px;
+		top: 820px;
+	}
+	
+	#C82 {
+		position: absolute;
+		left: 1750px;
+		top: 820px;
+	}
+	
+	
+	/* GrandChild generation positions */
+	
+	#GC11 {
+		position: absolute;
+		left: 280px;
+		top: 1060px;
+	}
+	
+	#GC12 {
+		position: absolute;
+		left: 370px;
+		top: 1060px;
+	}
+	
+	#GC21 {
+		position: absolute;
+		left: 510px;
+		top: 1060px;
+	}
+	
+	#GC22 {
+		position: absolute;
+		left: 600px;
+		top: 1060px;
+	}
+	
+	#GC31 {
+		position: absolute;
+		left: 740px;
+		top: 1060px;
+	}
+	
+	#GC32 {
+		position: absolute;
+		left: 830px;
+		top: 1060px;
+	}
+	
+	#GC41 {
+		position: absolute;
+		left: 970px;
+		top: 1060px;
+	}
+	
+	#GC42 {
+		position: absolute;
+		left: 1060px;
+		top: 1060px;
+	}
+	
+	#GC51 {
+		position: absolute;
+		left: 1430px;
+		top: 1060px;
+	}
+	
+	#GC52 {
+		position: absolute;
+		left: 1520px;
+		top: 1060px;
+	}
+	
+	#GC61 {
+		position: absolute;
+		left: 1660px;
+		top: 1060px;
+	}
+	
+	#GC62 {
+		position: absolute;
+		left: 1750px;
+		top: 1060px;
+	}

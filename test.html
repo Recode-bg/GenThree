@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<title>Grid Test</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Безплатно приложение за определяне на роднински отношения">
+	<meta name="keywords" content="HTML, CSS">
+	<meta name="author" content="Alexander Grantcharov | Recode.bg">
+
+
+<head>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+	
+	
+	<style>
+
+	body {
+		font-family: 'Exo 2', sans-serif;
+		background-color: rgb(80,80,80);
+	}
+	
+	#GP1 {
+		
+	}
+	
+	#GP2 {
+		
+	}
+	
+	.person {
+		width: 90px;
+		height: 90px;
+		display: inline-block;
+	}
+	
+	.holder {
+		background-size: contain;
+		border-radius: 50%;
+		width: 80px;
+		height: 80px;
+		text-align: center;
+		font-weight: 100;
+	}
+	
+	.husband_line {
+		width: 50px;
+		height: 10px;
+		border-bottom: solid 1px rgb(255,255,255);
+		border-left: solid 1px rgb(255,255,255);
+		float: right;
+	}
+	
+	.wife_line {
+		width: 50px;
+		height: 10px;
+		border-bottom: solid 1px rgb(255,255,255);
+		border-right: solid 1px rgb(255,255,255);
+		float: left;
+	}
+	
+	.male_sibling_line {
+		width: 50px;
+		height: 10px;
+		border-top: solid 1px rgb(255,255,255);
+		border-left: solid 1px rgb(255,255,255);
+		float: right;
+	}
+	
+	.female_sibling_line {
+		width: 50px;
+		height: 10px;
+		border-top: solid 1px rgb(255,255,255);
+		border-right: solid 1px rgb(255,255,255);
+		float: left;
+	}
+	
+	.male {
+		background-image: url('images/male.svg');
+		background-color: lightblue;
+		float: left;
+	}
+	
+	.female {
+		background-image: url('images/female.svg');
+		background-color: pink;
+		float: right;
+	}
+		
+	</style>
+	
+</head>
+
+
+<body>
+	<div id="canvas">
+		
+		<div id="GP1" class="person">
+			<div class="holder male">man</div>
+			<div class="husband_line"></div>
+		</div>
+		<div id="GP2" class="person">
+			<div class="holder female">woman</div>
+			<div class="wife_line"></div>
+		</div>
+		
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		
+		
+		<div id="GP3" class="person">
+			<div class="male_sibling_line"></div>
+			<div class="holder male">man</div>
+		</div>
+		<div id="GP4" class="person">
+			<div class="female_sibling_line"></div>
+			<div class="holder female">woman</div>
+		</div>
+	</div>
+</body>
+</html>
