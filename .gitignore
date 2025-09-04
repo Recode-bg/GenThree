@@ -1,0 +1,22 @@
+# Ignore the original folder
+original/
+
+# Common files to ignore
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.temp
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
